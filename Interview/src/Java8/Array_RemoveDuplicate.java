@@ -9,8 +9,10 @@ public class Array_RemoveDuplicate {
 		int[] arr = { 1, 23, 1 };
 		int c = 0;
 		for (int i = 0; i < arr.length; i++) {
-			for (int j = i + 1; j < arr.length; j++) {
-				if (arr[i] == arr[j]) {
+			for (int j = i + 1; j < arr.length; j++) 
+			{
+				if (arr[i] == arr[j]) 
+				{
 					c++;
 					break;
 				}
@@ -35,6 +37,8 @@ public class Array_RemoveDuplicate {
 			System.out.println(m);
 		}
 
+		
+		//by using java 8
 		List<Integer> aa = Arrays.asList(1, 2, 1, 2);
 		List<Integer>li =aa.stream().distinct().collect(Collectors.toList());
 		System.out.println(li);
