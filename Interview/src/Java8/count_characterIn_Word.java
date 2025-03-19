@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class count_characterIn_Word {
 public static void main(String[] args) {
-	String s = "javajavaee";
+	String s = "jarrvajavaeerr";
 //	//using collection and for loop
 	char ch;
 	Map<Character, Integer>mm=new HashMap();
