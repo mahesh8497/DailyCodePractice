@@ -1,5 +1,7 @@
 package Java8;
 
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.function.Function;
@@ -10,8 +12,14 @@ public static void main(String[] args) {
 	String s="asdfgfds";
 	Map<Character, Long> occurance = s.chars()
 	.mapToObj(c -> (char) c)
-	.collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+	.collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
 	System.out.println(occurance);
+	
+	Map<String, Long>map2=Arrays.stream(s.split(""))
+			.map(String::toLowerCase)
+			.collect(Collectors.groupingBy(e->e,Collectors.counting()));
+	System.out.println("count each characte: "+map2);
+	
 	
 	//output:  {a=1, s=2, d=2, f=2, g=1}
 

@@ -2,9 +2,12 @@ package Java8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Array_RemoveDuplicate {
+	
+
 	public static void main(String[] args) {
 		int[] arr = { 1, 23, 1 };
 		int c = 0;
@@ -40,7 +43,10 @@ public class Array_RemoveDuplicate {
 		
 		//by using java 8
 		List<Integer> aa = Arrays.asList(1, 2, 1, 2);
-		List<Integer>li =aa.stream().distinct().collect(Collectors.toList());
-		System.out.println(li);
+//		List<Integer>li =aa.stream().distinct().collect(Collectors.toList());
+//		System.out.println(li);
+		
+		Set<Integer> collect = aa.stream().collect(Collectors.toSet());
+		System.out.println(collect);
 	}
 }
