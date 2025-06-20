@@ -10,11 +10,15 @@ import java.util.stream.Collectors;
 public class OccuranceOfEachCharacter {
 public static void main(String[] args) {
 	String s="asdfgfds";
+	
+	//first way
 	Map<Character, Long> occurance = s.chars()
 	.mapToObj(c -> (char) c)
 	.collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
 	System.out.println(occurance);
 	
+	
+	//second way
 	Map<String, Long>map2=Arrays.stream(s.split(""))
 			.map(String::toLowerCase)
 			.collect(Collectors.groupingBy(e->e,Collectors.counting()));

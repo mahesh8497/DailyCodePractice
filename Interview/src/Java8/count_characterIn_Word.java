@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class count_characterIn_Word {
@@ -30,6 +31,9 @@ public static void main(String[] args) {
 			.collect(Collectors.groupingBy(e->e,LinkedHashMap::new,Collectors.counting()));
 	System.out.println("Maintain Insertion Order: "+map1);
 	
+	Map<Character, Long>oc=s.chars()
+			.mapToObj(c->(char)c).
+			collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));	
 	//
     
 //    // Creating a character frequency map while preserving insertion order

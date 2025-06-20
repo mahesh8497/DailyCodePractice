@@ -1,6 +1,7 @@
 package Java8;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -10,14 +11,14 @@ import java.util.stream.Collectors;
 public class abc {
 public static void main(String[] args) {
 	String s=" java is fun and java is powerful";
-	List<String>uniqueWords=Arrays.stream(s.split(" "))
+	List<String>uniqueWords=Arrays.stream(s.trim().split("\\s+"))//s.split(" ")
 			.map(String::toLowerCase).distinct().sorted().collect(Collectors.toList());
 	System.out.println(uniqueWords);
 	
 	String input = "Java8";
 	Map<Character, Long> charCount = input.chars()
 	    .mapToObj(c -> (char) c)
-	    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+	    .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new, Collectors.counting()));
 	System.out.println("Occurance: "+charCount);
 	
 	
