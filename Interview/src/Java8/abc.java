@@ -20,10 +20,39 @@ public static void main(String[] args) {
 	    .mapToObj(c -> (char) c)
 	    .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new, Collectors.counting()));
 	System.out.println("Occurance: "+charCount);
+
+	Integer a = 500;
+	Integer b = 500;
+	System.out.println(a == b); // ❌ false
+
+	Integer c = 5;
+	Integer d = 5;
+	System.out.println(c == d);
+	
+	/* Integer a = 5; Integer b = 5;
+	Java caches Integer objects for values between -128 to 127.
+
+	So, both a and b point to the same object in memory.
+
+	Therefore, a == b returns true (same reference).
+
+	❌ 2. Integer a = 500; Integer b = 500;
+	500 is outside the default Integer cache range.
+
+	So, two separate Integer objects are created.
+
+	Hence, a == b compares different references, and returns false.*/
 	
 	
+	String st1="asd";
+	String st2="asd";
+	System.out.println(st1==st2);
+	System.out.println(st1.equals(st2));
 	
 }
+
+
+
 
 
 }

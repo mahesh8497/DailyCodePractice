@@ -15,7 +15,9 @@ public static SingletonDesignPattern getInstance() {
   }
   return instance;
 }
+
 }
+
 
 
 
