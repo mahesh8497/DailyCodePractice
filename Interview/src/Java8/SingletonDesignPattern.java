@@ -1,14 +1,38 @@
 package Java8;
 
-public class EagerSingleton {
-    private static final EagerSingleton instance = new EagerSingleton();
 
-    private EagerSingleton() {} // private constructor
 
-    public static EagerSingleton getInstance() {
-        return instance;
-    }
+
+
+public class SingletonDesignPattern {
+private static SingletonDesignPattern instance;
+
+private SingletonDesignPattern() {}
+
+public static SingletonDesignPattern getInstance() {
+  if (instance == null) {
+      instance = new SingletonDesignPattern(); // not thread-safe
+  }
+  return instance;
 }
+}
+
+
+
+
+//public class EagerSingleton {
+//    private static final EagerSingleton instance = new EagerSingleton();
+//
+//    private EagerSingleton() {} // private constructor
+//
+//    public static EagerSingleton getInstance() {
+//        return instance;
+//    }
+//}
+
+
+
+
 
 //public class LazySingleton {
 //    private static LazySingleton instance;
