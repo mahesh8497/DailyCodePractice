@@ -1,6 +1,7 @@
 package Java8;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -14,13 +15,32 @@ public static void main(String[] args) {
 	 
 		//second max element
 	
-	 /* Optional<Integer>secondMax=list.stream().distinct().sorted(Comparator.
-	 * reverseOrder()) .skip(1).findFirst(); System.out.println(secondMax);
-	 */
+	  Optional<Integer>secondMax=list.stream().distinct().sorted(Comparator.
+	  reverseOrder()) .skip(1).findFirst();
+	  if(secondMax.isPresent()) {
+		  System.out.println("Second max element: "+secondMax.get());
+		  
+	  }
+	  else {
+		System.out.println("Not present");
+	}
+	  
+//	  System.out.println(secondMax);
+	 
 	
 	//max element
 	OptionalInt maxele = list.stream().mapToInt(Integer::intValue).max();	
-	System.out.println(maxele);
+	if(maxele.isPresent()) {
+		  System.out.println(" max element: "+maxele.getAsInt());
+		  
+	  }
+	  else {
+		System.out.println("Not present");
+	}
 	
+	
+	Optional<Integer> second = list.stream().distinct().sorted(Collections.reverseOrder())
+			.skip(1).findFirst();
+	System.out.println(second);
 }
 }
