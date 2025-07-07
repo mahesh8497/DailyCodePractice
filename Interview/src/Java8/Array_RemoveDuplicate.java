@@ -45,7 +45,8 @@ public class Array_RemoveDuplicate {
 		List<Integer> aa = Arrays.asList(1, 2, 1, 2);
 //		List<Integer>li =aa.stream().distinct().collect(Collectors.toList());
 //		System.out.println(li);
-		
+		List<Integer> collect2 = aa.stream().distinct().collect(Collectors.toList());
+		System.out.println("remove duplicate element: "+collect2);
 		Set<Integer> collect = aa.stream().collect(Collectors.toSet());
 		System.out.println(collect);
 	}

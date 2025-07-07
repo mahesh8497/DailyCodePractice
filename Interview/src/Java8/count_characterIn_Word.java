@@ -26,12 +26,16 @@ public static void main(String[] args) {
 			mm.put(ch, 1);
 		}
 	}
-	System.out.println(mm);
+	System.out.println("Using Collection: "+mm);//{a=4, r=4, b=5, s=5, c=1, u=3, e=2, v=3, i=5, j=2, o=1}
 	
 	
 	Map<String, Long> collect = Arrays.stream(s.split("")).map(String::toLowerCase)
 			.collect(Collectors.groupingBy(e->e,Collectors.counting()));
 	System.out.println("each character : "+collect);
+	
+	
+	
+	
 	Optional<Map.Entry<String, Long>> secondMaxEntry = collect.entrySet().stream()
             .sorted(Map.Entry.<String, Long>comparingByValue(Comparator.reverseOrder()))
             .skip(1) // skip the max
