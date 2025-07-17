@@ -37,7 +37,7 @@ public static SingletonDesignPattern getInstance() {
 
 
 //public class LazySingleton {
-//    private static LazySingleton instance;
+//    private static final  LazySingleton instance;
 //
 //    private LazySingleton() {}
 //
