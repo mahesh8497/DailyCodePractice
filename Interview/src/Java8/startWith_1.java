@@ -12,6 +12,9 @@ public class startWith_1 {
         .map(s -> s + "") // Convert integer to String
         .filter(s -> s.startsWith("1"))
         .forEach(System.out::println);
-	}
+		 
+		 
+		
+		 }
 
 }
