@@ -1,23 +1,24 @@
 package Java8;
 
 
-
-
-
-public class SingletonDesignPattern {
-private static SingletonDesignPattern instance;
-
-private SingletonDesignPattern() {}
-
-public static SingletonDesignPattern getInstance() {
-  if (instance == null) {
-      instance = new SingletonDesignPattern(); // not thread-safe
-  }
-  return instance;
-}
-
-}
-
+ class SingleTon {
+	 private static SingleTon Instance;
+	    private SingleTon(){
+	        
+	    }
+	    public static SingleTon getInstance(){
+	        if(Instance==null){
+	        Instance=new SingleTon();
+	    }
+	    return Instance;
+	}
+	}
+	public class SingletonDesignPattern {
+	    public static void main(String[] args) {
+	        SingleTon ss= SingleTon.getInstance();
+	        System.out.println(ss);
+	    }
+	}
 
 
 

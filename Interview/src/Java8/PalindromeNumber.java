@@ -8,8 +8,7 @@ public static void main(String[] args) {
 	while (num>0) {
 		r=num%10;
 		sum=(sum*10)+r;
-		num=num/10;
-		
+		num=num/10;	
 	}
 	if(temp==sum) {
 		System.out.println("yes");

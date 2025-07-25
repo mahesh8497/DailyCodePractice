@@ -25,10 +25,14 @@ public class PrimeNumber {
         int numbers = 29;
         boolean isPrimee = true;
 
-        if (numbers <= 1) {
+        if (numbers <= 1) 
+        {
         	isPrimee = false;
-        } else {
-            for (int i = 2; i <= numbers / 2; i++) {
+        } 
+        else 
+        {
+            for (int i = 2; i <= numbers / 2; i++) 
+            {
                 if (numbers % i == 0) {
                 	isPrimee = false;
                     break;
